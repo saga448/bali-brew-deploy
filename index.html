@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bali Brew Coffee Co. | Kopi, Diskusi, & Skena</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap');
+        
+        body { background-color: #f8f5f0; font-family: 'Inter', sans-serif; color: #2d2a26; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .glass-nav { background: rgba(248, 245, 240, 0.8); backdrop-filter: blur(10px); }
+        .navy-section { background-color: #1a2a40; color: #e2e8f0; }
+        .hover-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .hover-card:hover { transform: translateY(-10px); }
+    </style>
+</head>
+<body>
+
+    <!-- Navigasi -->
+    <nav class="glass-nav sticky top-0 z-50 px-6 py-4 flex justify-between items-center border-b border-stone-200">
+        <div class="flex items-center gap-3">
+            <img src="Gemini_Generated_Image_kotquakotquakotq_2.png" alt="Bali Brew Logo" class="h-10 w-10 object-contain">
+            <span class="text-xl font-bold tracking-tight">BALI BREW</span>
+        </div>
+        <div class="hidden md:flex gap-8 text-xs font-semibold uppercase tracking-widest">
+            <a href="#history" class="hover:text-amber-500 transition">Cerita</a>
+            <a href="#hero" class="hover:text-amber-500 transition">Signature</a>
+            <a href="#events" class="hover:text-amber-500 transition">Event</a>
+            <a href="#menu" class="hover:text-amber-500 transition">Menu</a>
+        </div>
+        <button onclick="document.getElementById('orderSection').scrollIntoView()" class="bg-[#1a2a40] text-white px-6 py-2 rounded-full text-xs font-bold hover:bg-amber-800 transition">PESAN</button>
+    </nav>
+
+    <!-- Section Cerita Kami (Navy) -->
+    <section id="history" class="navy-section py-24 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-5xl mb-8 text-amber-400">Cerita di Balik Bali Brew</h2>
+            <div class="prose prose-stone mx-auto text-lg leading-relaxed text-slate-300">
+                <p class="mb-6">Didirikan pada tahun 2023 di jantung Bali, Bali Brew Coffee Co. bermula dari obsesi sederhana terhadap biji kopi Kintamani yang legendaris.</p>
+                <p>Kami percaya bahwa kopi bukan sekadar kafein, melainkan medium untuk mempererat hubungan manusia. Setiap cangkir yang kami sajikan adalah penghormatan kepada petani lokal. Kami bekerja langsung dengan sumber, memastikan setiap proses dari jemur hingga seduh terjaga kualitasnya. Di sini, setiap sudut ruangan dirancang untuk diskusi yang tidak pernah selesai.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Header / Signature Creation -->
+    <header id="hero" class="py-20 px-6 flex flex-col items-center text-center border-b border-stone-200">
+        <h1 class="text-5xl md:text-6xl mb-6">Signature Creations</h1>
+        <p class="max-w-md text-stone-600 mb-10 leading-relaxed">Menu pilihan kurasi barista kami untuk menemani diskusi santai kamu hari ini.</p>
+        
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl" id="signatureMenu">
+            <!-- Signature items injected by JS -->
+        </div>
+    </header>
+
+    <!-- Section Events -->
+    <section id="events" class="py-20 px-6 max-w-6xl mx-auto border-b border-stone-200">
+        <h2 class="text-4xl mb-12 text-center">Event Minggu Ini</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-100">
+                <span class="text-amber-700 font-bold text-xs uppercase tracking-widest">Sabtu, 20 Juni</span>
+                <h3 class="text-2xl mt-2 mb-4">Acoustic Sunset Session</h3>
+                <p class="text-stone-600 text-sm mb-4">Menikmati sore dengan alunan musik akustik dari musisi lokal Bali. Gratis masuk!</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-100">
+                <span class="text-amber-700 font-bold text-xs uppercase tracking-widest">Setiap Selasa</span>
+                <h3 class="text-2xl mt-2 mb-4">Workshop Brewing Dasar</h3>
+                <p class="text-stone-600 text-sm mb-4">Pelajari cara menyeduh V60 yang benar bersama barista ahli kami. Reservasi via DM.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu -->
+    <section id="menu" class="py-20 px-6 max-w-6xl mx-auto">
+        <h2 class="text-4xl mb-12 text-center">Seluruh Menu Kami</h2>
+        
+        <h3 class="text-2xl mb-6 text-stone-500 border-b border-stone-200 pb-2">Coffee Creations</h3>
+        <div class="grid md:grid-cols-3 gap-8 mb-12" id="coffeeMenu"></div>
+
+        <h3 class="text-2xl mb-6 text-stone-500 border-b border-stone-200 pb-2">Beverages</h3>
+        <div class="grid md:grid-cols-3 gap-8 mb-12" id="bevMenu"></div>
+
+        <h3 class="text-2xl mb-6 text-stone-500 border-b border-stone-200 pb-2">Bites</h3>
+        <div class="grid md:grid-cols-3 gap-8 mb-12" id="biteMenu"></div>
+    </section>
+
+    <!-- Order Section -->
+    <section id="orderSection" class="py-20 bg-amber-50 px-6 text-center">
+        <h2 class="text-4xl mb-8">Pesan Sekarang</h2>
+        <div id="cart" class="max-w-md mx-auto mb-8 p-6 bg-white rounded-2xl shadow-sm border border-stone-200">
+            <p id="cartStatus" class="font-bold mb-4">Keranjang kosong.</p>
+            <input type="text" id="custName" placeholder="Nama kamu" class="w-full p-3 rounded-lg border border-stone-200 mb-4 focus:outline-none focus:border-amber-800">
+            
+            <button id="btnPrepareOrder" onclick="showPaymentOptions()" class="w-full bg-[#1a2a40] text-white py-3 rounded-lg font-bold hover:bg-amber-800 transition">Siapkan Pesanan</button>
+
+            <div id="paymentOptions" class="hidden mt-6 space-y-3">
+                <p class="text-sm text-stone-600 mb-2">Pilih metode pembayaran:</p>
+                <button onclick="sendToWhatsApp('Bayar di Kasir')" class="w-full bg-amber-600 text-white py-3 rounded-lg font-bold hover:bg-amber-700 transition">Bayar di Kasir</button>
+                <button onclick="sendToWhatsApp('QRIS')" class="w-full bg-stone-100 text-stone-800 py-3 rounded-lg font-bold hover:bg-stone-200 transition">Bayar via QRIS</button>
+                <button onclick="resetOrder()" class="text-xs text-stone-400 mt-2 underline">Batal</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const menuData = {
+            coffee: [
+                {name: "Kintamani V60", price: "35k", ingredients: "Single Origin Beans, Pure Water", img: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=400"},
+                {name: "Matcha Espresso Fusion", price: "42k", ingredients: "Premium Matcha, Double Espresso, Oat Milk", img: "https://images.unsplash.com/photo-1515823064-981249332273?w=400"},
+                {name: "Banana Coffee Shake", price: "40k", ingredients: "Espresso, Fresh Banana, Vanilla, Milk", img: "https://images.unsplash.com/photo-1582106245687-c546f564756c?w=400"},
+                {name: "Kopi Susu Aren", price: "28k", ingredients: "Espresso, Palm Sugar, Fresh Milk", img: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400"}
+            ],
+            bev: [
+                {name: "Tropical Sunset", price: "30k", ingredients: "Pineapple, Orange, Soda Water", img: "https://images.unsplash.com/photo-1513558161293-cfff76466373?w=400"},
+                {name: "Bali Ginger Lime", price: "28k", ingredients: "Fresh Ginger, Lime, Honey, Soda", img: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400"},
+                {name: "Iced Lychee Tea", price: "25k", ingredients: "Premium Black Tea, Lychee, Fresh Mint", img: "https://images.unsplash.com/photo-1524363270766-231362723707?w=400"}
+            ],
+            bites: [
+                {name: "Sourdough Avo Toast", price: "45k", ingredients: "Sourdough, Avocado, Poached Egg", img: "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=400"},
+                {name: "Pisang Goreng Keju", price: "25k", ingredients: "Pisang Raja, Cheese, Palm Sugar", img: "https://images.unsplash.com/photo-1554836691-62a26c483259?w=400"},
+                {name: "Croissant Butter", price: "22k", ingredients: "French Butter, Flaky Pastry", img: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400"}
+            ]
+        };
+
+        let currentCart = [];
+
+        function renderSection(id, items) {
+            const container = document.getElementById(id);
+            if(!container) return;
+            container.innerHTML = items.map(item => `
+                <div class="hover-card bg-white p-4 rounded-3xl shadow-sm border border-stone-100 text-left">
+                    <img src="${item.img}" class="w-full h-48 object-cover rounded-2xl mb-4" alt="${item.name}">
+                    <h3 class="text-xl font-bold">${item.name}</h3>
+                    <p class="text-stone-500 text-sm mb-2">Rp ${item.price}</p>
+                    <p class="text-stone-400 text-xs mb-4 italic">${item.ingredients}</p>
+                    <button onclick="addToCart('${item.name}')" class="w-full py-2 bg-stone-100 rounded-lg hover:bg-amber-100 transition">Tambah (+)</button>
+                </div>
+            `).join('');
+        }
+
+        function renderAll() {
+            renderSection('signatureMenu', [menuData.coffee[0], menuData.coffee[1], menuData.bites[0]]);
+            renderSection('coffeeMenu', menuData.coffee);
+            renderSection('bevMenu', menuData.bev);
+            renderSection('biteMenu', menuData.bites);
+        }
+
+        function addToCart(item) {
+            currentCart.push(item);
+            document.getElementById('cartStatus').innerText = 'Antrian: ' + currentCart.join(', ');
+        }
+
+        function showPaymentOptions() {
+            const name = document.getElementById('custName').value;
+            if(currentCart.length === 0) { alert('Pilih menu dulu dong!'); return; }
+            if(!name) { alert('Nama kamu siapa? Barista butuh nama untuk panggil!'); return; }
+            
+            document.getElementById('btnPrepareOrder').classList.add('hidden');
+            document.getElementById('paymentOptions').classList.remove('hidden');
+        }
+
+        function resetOrder() {
+            document.getElementById('btnPrepareOrder').classList.remove('hidden');
+            document.getElementById('paymentOptions').classList.add('hidden');
+        }
+
+        function sendToWhatsApp(paymentMethod) {
+            const name = document.getElementById('custName').value;
+            const phone = "6281234567890";
+            const message = `Halo Barista Bali Brew! 👋%0A%0A` +
+                            `Saya ingin memesan kopi:%0A` +
+                            `Nama: ${name}%0A` +
+                            `Pesanan: ${currentCart.join(', ')}%0A` +
+                            `Metode Bayar: ${paymentMethod}%0A%0A` +
+                            `Terima kasih!`;
+            
+            window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+            
+            currentCart = [];
+            document.getElementById('cartStatus').innerText = 'Keranjang kosong.';
+            document.getElementById('custName').value = '';
+            resetOrder();
+        }
+
+        window.onload = renderAll;
+    </script>
+</body>
+</html>
